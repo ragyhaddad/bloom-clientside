@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bloom - Discover new artists, explore new music.</title>
+  <link rel="shortcut icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/nouislider.min.css">
+</head>
+
+<body>
+  <!-- Mobile Block -->
+  <div class="no-mobile">
+    <img src="./images/logo.svg" draggable="false">
+    <p>Sorry, mobile not supported.</p>
+  </div>
+
+
+  <!-- Tutorial -->
+  <div class="tutorial">
+    <div id="click-block"></div>
+    <div class="tutorial-block">
+      <p class="tutorial-text"></p>
+      <a id="tutorial-next">Next</a>
+      <a style='margin-left:10px;' id="tutorial-next" onclick='skipTutorial();' >ill figure it out</a>
+    </div>
+    <div class="tutorial-intro">
+      <img src="./images/logo.svg" draggable="false">
+      <a class="start-tutorial">Start tutorial.</a>
+      <a class="skip-tutorial" '>I've been here before.</a>
+    </div>
+
+  </div>
+  <div class="tutorial-background"></div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <div class="contact-modal">
+      <h1>Want to contact us?</h1>
+      <p>We'll get back to you as soon as we can.</p>
+      <form class="contact-form" action="/mail" method='POST' autocomplete="off">
+        <input class="contact-form-input" type="text" name="name" placeholder="Name" required>
+        <input class="contact-form-input" type="email" name="email" placeholder="Email" required>
+        <textarea name="mes" placeholder="Message" required></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+    <div class="contact-background"></div>
+  </div>
+
+  <!-- Explore -->
+  <div class="explore">
+    <div class="explore-modal">
+      <input class="input-2" type="text" placeholder="Search...">
+      <a class="explore-button" onclick="startSearch()">
+        <img src="./images/search.svg" draggable="false"/>
+      </a>
+      <ul class="explore-results"></ul>
+      <div class="explore-loader"></div>
+      <div class="no-results">No results found.</div>
+    </div>
+    <div class="explore-background" onclick="closeExplore()"></div>
+  </div>
+
+  <!-- Settings -->
+  <div class="settings">
+    <div class="settings-modal">
+      <p class="sub-title">Follower range<span class="settings-count"></span></p>
+      <div id="range"></div>
+    </div>
+    <div class="settings-background" onclick="closeSettings()"></div>
+  </div>
+
+  <!-- Explore/Random -->
+  <a id="search-button" class="button-main" onclick="explore()">
+    <img src="./images/search.svg" draggable="false"/>
+  </a>
+  <a id="favorite-button" class="button-secondary" onclick="getBloomFavorites()">
+    <img src="./images/star.svg" draggable="false"/>
+  </a>
+  <a id="random-button" class="button-secondary" onclick="random()">
+    <img src="./images/help-circle.svg" draggable="false"/>
+  </a>
+  <a id="radio-button" class="button-secondary" onclick="generatePlaylist()">
+    <img src="./images/radio.svg" draggable="false"/>
+  </a>
+
+  <!-- Logo -->
+  <img class="logo" src="./images/logo.svg" draggable="false">
+
+  <!-- Current User -->
+  <p class="current-user-label"></p>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="side-bar">
+    <div class="sidebar-fade"></div>
+    <div class="sidebar-fade2"></div>
+    <div class="user-info" onclick="goToProfile()">
+      <div class="user-img"></div>
+      <div class="user-name"></div>
+      <div class="user-followers"></div>
+    </div>
+    <div class="top-tracks"></div>
+  </div>
+
+  <!-- Back Button -->
+  <a class="back-button" onclick="back()">
+    <img src="./images/arrow-left.svg" draggable="false" />
+  </a>
+  <!-- Settings button -->
+  <div id="settings-button" class="settings-button" onclick="openSettings()">
+    <img src="./images/settings.svg" draggable="false" />
+  </div>
+  <!-- Contact button -->
+  <div id="contact-button" class="contact-button" onclick="openContact()">
+    <img src="./images/mail.svg" draggable="false" />
+  </div>
+  <!-- Player button -->
+  <div id="player-button" class="player-button">
+    <img src="./images/music.svg" draggable="false" />
+  </div>
+
+  <!-- Player -->
+  <div class="player">
+    <iframe  onended="endFunction();" width="500" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/279989691&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <!-- Player Controls-->
+    <div class="fast-forward" onclick="nextSong()">
+      <img src="./images/skip-forward.svg" draggable="false" />
+    </div>
+    <div class="current-playing" onclick="goToCurrentPlaying()">
+      <img src="./images/user.svg" draggable="false" />
+    </div>
+  </div>
+
+  <!-- SVG -->
+  <div class="data-display">
+  </div>
+
+  <!-- Loading graphic -->
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- javascript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+  <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+  <script src="./js/nouislider.min.js" charset="utf-8"></script>
+  <script src="./js/sc_widget.js"></script>
+  <script src="./js/main.js" charset="utf-8"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120601921-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120601921-1');
+  </script>
+</body>
+</html>

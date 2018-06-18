@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bloom - Discover new artists, explore new music.</title>
+  <link rel="shortcut icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="sent">
+    <img src="./images/logo.svg" draggable="false">
+    <h1>Thanks for your message.</h1>
+    <p>You will be redirected back to Bloom in <span id="count"></span> seconds.</p>
+  </div>
+
+  <script type="text/javascript">
+    let count = 4;
+    let countSpan = document.getElementById('count');
+    countSpan.innerHTML = count;
+
+    setInterval(() => {
+      count--;
+      if(count >= 0)
+        countSpan.innerHTML = count;
+      if(count == 0)
+        window.location.href = "bloommusic.us";
+    }, 1000)
+
+  </script>
+</body>
+</html>
