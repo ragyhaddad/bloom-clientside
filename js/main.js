@@ -133,8 +133,8 @@ function nextSection(){
 }
 
 function skipTutorial(){
-  $(".tutorial").css("display", "none");
-  $(".tutorial-background").css("display", "none");
+$(".tutorial").css("opacity", "0").css("visibility", "hidden");
+  $(".tutorial-background").css("opacity", "0").css("visibility", "hidden");
 }
 /* ON PAGE LOAD */
 var randomNum = (Math.floor(Math.random() * recommendedArtists.length));
