@@ -39,7 +39,7 @@
     <div class="contact-modal">
       <h1>Want to contact us?</h1>
       <p>We'll get back to you as soon as we can.</p>
-      <form class="contact-form" action="www.bloom-api.tk/mail" method='POST' autocomplete="off">
+      <form class="contact-form" action="/mail" method='POST' autocomplete="off">
         <input class="contact-form-input" type="text" name="name" placeholder="Name" required>
         <input class="contact-form-input" type="email" name="email" placeholder="Email" required>
         <textarea name="mes" placeholder="Message" required></textarea>
@@ -113,7 +113,7 @@
     <img src="./images/settings.svg" draggable="false" />
   </div>
   <!-- Contact button -->
-  <div id="contact-button" class="contact-button" onclick="openContact()">
+  <div id="contact-button" class="contact-button" onclick="sendMail()">
     <img src="./images/mail.svg" draggable="false" />
   </div>
   <!-- Player button -->

@@ -58,6 +58,12 @@ var recommendedArtists = [
   "phonogramme"
 ];
 
+//send mail
+
+function sendMail(){
+   window.location.href = "mailto:ragy202@gmail.com";
+}
+
 
 // Contact
 function openContact(){
