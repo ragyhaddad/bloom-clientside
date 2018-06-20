@@ -1044,13 +1044,6 @@ function drawGraph() {
   function zoomed() {
     node.attr("transform", d3.event.transform);
     link.attr("transform", d3.event.transform);
-    if(d3.event.transform.k > 2){
-
-    }
-    else{
-        console.log('remove names');
-    }
-
   }
   svg.call(zoom);
 
