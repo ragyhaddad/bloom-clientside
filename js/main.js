@@ -1,3 +1,5 @@
+console.log("Designed by Ragy and Seb.");
+
 // User input variables
 var firstInput;
 var currentInput;
