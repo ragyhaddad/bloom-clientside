@@ -1,13 +1,18 @@
 /* Variables */
 :root{
   --light: #fff;
-  --light2: #f7f7f7;
-  --text: #333;
+  --light-2: #f4f5f7;
+  --light-3: #edeff2;
+  --text: #414447;
   --accent: #4286f4;
   --soundcloud: #ff5500;
-  --border: 1px solid rgba(0,0,0,0.1) !important;
+  --border-gray: #d7d9e0;
+  --border-gray-dark: #babdc6;
+  --border-blue: #346ac1;
+  --border-blue-dark: #244a87;
   --shadow: 0px 3px 15px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1);
   --shadow2: 0px 3px 15px rgba(0,0,0,0.15), 0px 1px 1px rgba(0,0,0,0.3);
+  --drop-shadow: drop-shadow(0px 3px 15px rgba(0,0,0,0.15)) drop-shadow(0px 1px 1px rgba(0,0,0,0.3))
 }
 
 ::-webkit-scrollbar {
@@ -28,7 +33,7 @@ body{
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  background: var(--light2);
+  background: var(--light-2);
   animation: fade 1s 0s backwards;
 }
 
@@ -72,12 +77,12 @@ text{
   top: 15px;
   right: 15px;
   display: inline-block;
-  background: var(--light2);
-  border: var(--border);
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,9 +130,9 @@ text{
   width: 100%;
   padding: 15px 20px;
   margin-bottom: 10px;
-  background: var(--light2);
-  border: var(--border);
-  box-shadow: 0px 1px 0px #ddd;
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
+  box-shadow: 0px 1px 0px var(--border-gray);
   border-radius: 3px;
   outline: none;
   cursor: text;
@@ -140,9 +145,9 @@ text{
   height: 150px;
   resize: none;
   padding: 15px 20px;
-  background: var(--light2);
-  border: var(--border);
-  box-shadow: 0px 1px 0px #ddd;
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
+  box-shadow: 0px 1px 0px var(--border-gray);
   border-radius: 3px;
   outline: none;
   cursor: text;
@@ -151,8 +156,8 @@ text{
   background: var(--accent);
   color: var(--light);
   cursor: pointer;
-  border: 1px solid #346ac1;
-  box-shadow: 0px 1px 0px #346ac1;
+  border: 1px solid var(--border-blue);
+  box-shadow: 0px 1px 0px var(--border-blue);
   margin-top: 30px;
   margin-bottom: 0px;
 }
@@ -201,16 +206,16 @@ text{
 }
 .tutorial-block{
   position: fixed;
-  background: white;
+  background: var(--light);
   max-width: 300px;
   display: none;
   padding: 40px;
-  box-shadow: var(--shadow2);
+  filter: var(--drop-shadow);
   border-radius: 3px;
   z-index: 600;
 }
 .tutorial-text{
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   color: var(--text);
 }
 #tutorial-next{
@@ -264,8 +269,8 @@ text{
   border-radius: 3px;
   margin-bottom: 10px;
   cursor: pointer;
-  border: 1px solid #346ac1;
-  box-shadow: 0px 1px 0px #346ac1;
+  border: 1px solid var(--border-blue);
+  box-shadow: 0px 1px 0px var(--border-blue);
 }
 .description{
   max-width: 300px;
@@ -275,7 +280,8 @@ text{
 .skip-tutorial{
   cursor: pointer;
   padding: 10px;
-  opacity: 0.4;
+  opacity: 0.5;
+  color: var(--text);
 }
 .skip-tutorial:hover{
   opacity: 1;
@@ -291,7 +297,7 @@ text{
   position: absolute;
   width: 10px;
   height: 10px;
-  background: white;
+  background: var(--light);
   transform: rotate(45deg);
 }
 .shadow{
@@ -309,12 +315,12 @@ text{
   bottom: -10px;
   left: 510px;
   display: inline-block;
-  background: var(--light2);
-  border: var(--border);
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -330,12 +336,12 @@ text{
   top: 0px;
   left: 510px;
   display: inline-block;
-  background: var(--light2);
-  border: var(--border);
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,7 +377,7 @@ text{
 .player{
   position: fixed;
   bottom: 15px;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   left: 315px;
   z-index: 5;
   transform: translate(0px, 400px);
@@ -383,7 +389,7 @@ text{
   border-radius: 3px;
   position: relative;
   z-index: 6;
-  border: var(--border);
+  border: 1px solid var(--border-gray);
 }
 .player-button{
   height: 40px;
@@ -392,12 +398,12 @@ text{
   bottom: 15px;
   left: 265px;
   display: inline-block;
-  background: var(--light2);
-  border: var(--border);
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,7 +429,7 @@ text{
 .settings-modal{
   position: relative;
   width: 500px;
-  background: var(--light2);
+  background: var(--light-2);
   border-radius: 3px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -456,12 +462,12 @@ text{
   top: 15px;
   right: 65px;
   display: inline-block;
-  background: var(--light2);
-  border: var(--border);
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -479,8 +485,8 @@ text{
   height: 100vh;
 }
 .noUi-target{
-  background: #eee !important;
-  border: 1px solid rgba(0,0,0,0.1) !important;
+  background: var(--light-3) !important;
+  border: 1px solid var(--border-gray) !important;
   border-radius: 3px !important;
   cursor: pointer !important;
   box-shadow: none !important;
@@ -490,7 +496,7 @@ text{
   width: 28px !important;
   outline: none !important;
   box-shadow: none !important;
-  border: 1px solid rgba(0,0,0,0.2) !important;
+  border: 1px solid var(--border-gray) !important;
   border-radius: 50% !important;
   cursor: pointer !important;
   background: var(--light) !important;
@@ -504,7 +510,7 @@ text{
 }
 .noUi-connect{
   height: 100% !important;
-  background: var(--light2) !important;
+  background: var(--light-2) !important;
   cursor: pointer !important;
 }
 .noUi-tooltip {
@@ -533,7 +539,7 @@ text{
   position: relative;
   width: 500px;
   height: 400px;
-  background: var(--light2);
+  background: var(--light-2);
   border-radius: 3px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -549,7 +555,7 @@ text{
   color: var(--text);
   background: var(--light);
   border: none;
-  border-bottom: var(--border);
+  border-bottom: 1px solid var(--border-gray);
   outline: none;
   cursor: text;
   z-index: 14;
@@ -565,8 +571,8 @@ text{
   left: 451px;
   background: var(--accent);
   color: var(--light);
-  border: 1px solid #346ac1;
-  box-shadow: 0px 1px 0px #346ac1;
+  border: 1px solid var(--border-blue);
+  box-shadow: 0px 1px 0px var(--border-blue);
   cursor: pointer;
   border-radius: 3px;
   z-index: 15;
@@ -672,11 +678,11 @@ text{
   height: 343px;
   padding: 20px 30px;
   background: var(--light);
-  border: var(--border);
+  border: 1px solid var(--border-gray);
   z-index: 10;
   border-radius: 3px;
   overflow: scroll;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
 }
 .followings-bar{
   position: fixed;
@@ -686,11 +692,10 @@ text{
   height: 343px;
   padding: 20px 30px;
   background: var(--light);
-  box-shadow: 0px 1px 0px #ddd;
-  border: var(--border);
+  box-shadow: 0px 1px 0px var(--border-gray);
+  border: 1px solid var(--border-gray);
   z-index: 10;
   border-radius: 3px;
-  /*background: grey;*/
 }
 .logo{
   position: fixed;
@@ -729,10 +734,10 @@ text{
   height: 40px;
   background: var(--accent);
   color: var(--light);
-  border: 1px solid #346ac1;
+  border: 1px solid var(--border-blue);
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 0px 1px 0px #346ac1;
+  box-shadow: 0px 1px 0px var(--border-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -748,12 +753,12 @@ text{
   position: relative;
   width: 40px;
   height: 40px;
-  background: var(--light2);
+  background: var(--light-2);
   color: var(--text);
-  border: var(--border);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -770,12 +775,12 @@ text{
   cursor: pointer;
 }
 .button-main:hover, .explore-button:hover, .start-tutorial:hover, .contact-form input:last-child:hover{
-  box-shadow: inset 0px 0px 1000px rgba(0,0,0,0.1), 0px 1px 0px #244a87;
-  border: 1px solid #244a87;
+  box-shadow: inset 0px 0px 1000px rgba(0,0,0,0.075), 0px 1px 0px var(--border-blue-dark);
+  border: 1px solid var(--border-blue-dark);
 }
 .button-secondary:hover, .back-button:hover, .settings-button:hover, .player-button:hover, .fast-forward:hover, .contact-button:hover, .contact-form input:focus, .contact-form textarea:focus{
-  box-shadow: inset 0px 0px 1000px rgba(0,0,0,0.05), 0px 1px 0px #ccc;
-  border: 1px solid #ccc;
+  box-shadow: inset 0px 0px 1000px rgba(0,0,0,0.025), 0px 1px 0px var(--border-gray-dark);
+  border: 1px solid var(--border-gray-dark);
 }
 .user-info{
   visibility: hidden;
@@ -859,11 +864,11 @@ text{
   width: 40px;
   left: 265px;
   bottom: 317px;
-  background: var(--light2);
-  border: var(--border);
+  background: var(--light-2);
+  border: 1px solid var(--border-gray);
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px var(--border-gray);
   z-index: 5;
   opacity: 0;
   transform: translate(-100px, 0px);
@@ -881,17 +886,17 @@ text{
 /* Svg data display */
 .main-svg{
   position: fixed;
-  background: var(--light2);
+  background: var(--light-2);
   animation: fade 0.2s 1s backwards;
   z-index: 2;
 }
 .links line {
-  stroke: #ddd;
+  stroke: var(--border-gray);
   stroke-width: 0.5px;
   stroke-opacity: 0;
 }
 .nodes circle {
-  stroke: var(--light2);
+  stroke: var(--light-2);
   stroke-width: 1px;
 }
 .pointer{
@@ -914,6 +919,7 @@ text{
   text-transform: uppercase;
   font-size: 12px;
   font-weight: normal;
+  opacity: 0.75;
 }
 
 /* Loading icon */
@@ -931,19 +937,12 @@ text{
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  border-top: 4px solid #4286f4;
-  border-left: 4px solid #ddd;
-  border-right: 4px solid #ddd;
-  border-bottom: 4px solid #ddd;
+  border-top: 4px solid var(--accent);
+  border-left: 4px solid var(--border-gray);
+  border-right: 4px solid var(--border-gray);
+  border-bottom: 4px solid var(--border-gray);
   animation: spinner 0.75s linear infinite;
 }
-/* .onPlay{
-  fill: orange;
-  -webkit-animation: pulse 2s linear infinite;
-  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-  scale: 2.0;
-  r: 15;
-} */
 
 /* Animations */
 @keyframes spinner {
