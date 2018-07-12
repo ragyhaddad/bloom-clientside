@@ -1,3 +1,5 @@
+console.log("Designed by Ragy and Seb.");
+
 // User input variables
 var firstInput;
 var currentInput;
@@ -88,12 +90,16 @@ $(".contact-background").on("click", () => {
 let divOrder = ["#sidebar", "#search-button", "#favorite-button", "#random-button", "#radio-button", "#player-button", "#settings-button", "#contact-button"];
 let divAlignV = ["bottom", "bottom", "bottom", "bottom", "bottom", "bottom", "top", "top"];
 let divAlignH = ["left", "left", "left", "left", "left", "left", "right", "right"];
-let divPosX = ["186", "420", "420", "420", "420", "14", "65", "65"];
-let divPosY = ["265", "15", "65", "115", "215", "315", "65", "15"];
+let pointerAlignV = ["top", "bottom", "bottom", "bottom", "bottom", "bottom", "top", "top"];
+let pointerAlignH = ["left", "left", "left", "left", "left", "left", "right", "right"];
+let divPosX = ["204", "430", "430", "430", "430", "14", "75", "75"];
+let divPosY = ["275", "15", "65", "115", "215", "325", "65", "15"];
+let pointerPosX = ["30", "-5", "-5", "-5", "-5", "15", "-5", "-5"];
+let pointerPosY = ["-5", "15", "15", "15", "15", "-5", "15", "15"];
 let divText = [
-  "Here you can see the artist you are currently viewing",
-  "You can search for soundcloud artists using this button",
-  "You can view our favorite hand-picked artists using this button",
+  "Here you can see the artist you are currently viewing.",
+  "You can search for various soundcloud artists using this button.",
+  "You can view our favorite hand-picked artists using this button.",
   "You can navigate to a random soundcloud user using this button",
   "This button starts a continuous radio based on the current artists likes.",
   "This button opens and closes the music player.",
@@ -117,6 +123,7 @@ $("#tutorial-next").on("click", nextSection);
 function nextSection(){
   if(tutorialCount >= divOrder.length-1){
     $("#tutorial-next")[0].innerHTML = "Finish";
+    $("#tutorial-next-2")[0].innerHTML = "";
   }
   if(tutorialCount >= divOrder.length){
     $(".tutorial").css("display", "none");
@@ -126,21 +133,29 @@ function nextSection(){
   $(".tutorial-block").css("right", "");
   $(".tutorial-block").css("top", "");
   $(".tutorial-block").css("bottom", "");
+  $(".tutorial-pointer").css("left", "");
+  $(".tutorial-pointer").css("right", "");
+  $(".tutorial-pointer").css("top", "");
+  $(".tutorial-pointer").css("bottom", "");
   if(tutorialCount > 0){
     $(divOrder[tutorialCount-1]).css("z-index", prevZIndex);
+    $(divOrder[tutorialCount-1]).removeClass("shadow");
   }
   $(".tutorial-text")[0].innerHTML = divText[tutorialCount];
   $(".tutorial-block").css(divAlignH[tutorialCount], divPosY[tutorialCount]);
   $(".tutorial-block").css(divAlignV[tutorialCount], divPosX[tutorialCount]);
+  $(".tutorial-pointer").css(pointerAlignH[tutorialCount], pointerPosY[tutorialCount]);
+  $(".tutorial-pointer").css(pointerAlignV[tutorialCount], pointerPosX[tutorialCount]);
   prevZIndex = $(divOrder[tutorialCount]).css("z-index");
   $(divOrder[tutorialCount]).css("z-index", "500");
+  $(divOrder[tutorialCount]).addClass("shadow");
   console.log($(divOrder[tutorialCount]));
   tutorialCount++;
 }
 
 function skipTutorial(){
-$(".tutorial").css("opacity", "0").css("visibility", "hidden");
-  $(".tutorial-background").css("opacity", "0").css("visibility", "hidden");
+  $(".tutorial").css("display", "none");
+  $(".tutorial-background").css("display", "none");
 }
 /* ON PAGE LOAD */
 var randomNum = (Math.floor(Math.random() * recommendedArtists.length));
@@ -163,7 +178,7 @@ function getBloomFavorites(username) {
                 getUser(recommendedArtists[randomNum]);
 
             }
-            
+
         })
 }
 
@@ -201,7 +216,7 @@ function generatePlaylistLikes() {
       }
       var trackID = data.collection[x].track.id;
       if (!(trackID === null)) {
-        
+
           var trackObject = {
           track_id: data.collection[x].track.id.toString(),
           node_id: data.collection[x].track.user.permalink
@@ -215,7 +230,7 @@ function generatePlaylistLikes() {
 }
 
 
-/* 
+/*
 * Navigate to current artist playing
 */
 function goToCurrentPlaying (){
@@ -982,7 +997,7 @@ function drawGraph() {
 
 
 
-  
+
 
 
 

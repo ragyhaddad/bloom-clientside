@@ -197,7 +197,6 @@ text{
   position: fixed;
   height: 100vh;
   width: 100vw;
-  /* background: pink; */
   z-index: 550;
 }
 .tutorial-block{
@@ -218,7 +217,13 @@ text{
   color: var(--accent);
   cursor: pointer;
 }
-#tutorial-next:hover{
+#tutorial-next-2{
+  color: var(--text);
+  margin-left: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+#tutorial-next:hover, #tutorial-next-2:hover{
   text-decoration: underline;
 }
 .tutorial{
@@ -281,6 +286,17 @@ text{
   height: 100vw;
   width: 100vw;
   background: rgba(0,0,0,0.5);
+}
+.tutorial-pointer{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  transform: rotate(45deg);
+}
+.shadow{
+  box-shadow: var(--shadow2) !important;
+  border: none !important;
 }
 
 /* Next song*/
@@ -634,18 +650,18 @@ text{
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
   height: 25px;
   position: fixed;
-  bottom: 15px;
-  left: 15px;
-  width: 240px;
+  bottom: 16px;
+  left: 16px;
+  width: 238px;
   z-index: 20;
 }
 .sidebar-fade2{
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
   height: 25px;
   position: fixed;
-  bottom: 333px;
-  left: 15px;
-  width: 240px;
+  bottom: 332px;
+  left: 16px;
+  width: 238px;
   z-index: 20;
 }
 .side-bar{
@@ -818,7 +834,7 @@ text{
 .track-fade{
   position: absolute;
   height: 40px;
-  width: 178px;
+  width: 180px;
   box-shadow: inset -40px 0px 20px -20px var(--light);
   cursor: pointer;
 }
