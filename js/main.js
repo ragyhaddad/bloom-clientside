@@ -92,7 +92,7 @@ let divAlignV = ["bottom", "bottom", "bottom", "bottom", "bottom", "bottom", "to
 let divAlignH = ["left", "left", "left", "left", "left", "left", "right", "right"];
 let pointerAlignV = ["top", "bottom", "bottom", "bottom", "bottom", "bottom", "top", "top"];
 let pointerAlignH = ["left", "left", "left", "left", "left", "left", "right", "right"];
-let divPosX = ["204", "430", "430", "430", "430", "14", "75", "75"];
+let divPosX = ["194", "430", "430", "430", "430", "14", "75", "75"];
 let divPosY = ["275", "15", "65", "115", "215", "325", "65", "15"];
 let pointerPosX = ["30", "-5", "-5", "-5", "-5", "15", "-5", "-5"];
 let pointerPosY = ["-5", "15", "15", "15", "15", "-5", "15", "15"];
@@ -149,13 +149,13 @@ function nextSection(){
   prevZIndex = $(divOrder[tutorialCount]).css("z-index");
   $(divOrder[tutorialCount]).css("z-index", "500");
   $(divOrder[tutorialCount]).addClass("shadow");
-  console.log($(divOrder[tutorialCount]));
   tutorialCount++;
 }
 
 function skipTutorial(){
   $(".tutorial").css("display", "none");
   $(".tutorial-background").css("display", "none");
+  $(divOrder[tutorialCount-1]).removeClass("shadow");
 }
 /* ON PAGE LOAD */
 var randomNum = (Math.floor(Math.random() * recommendedArtists.length));
@@ -860,7 +860,7 @@ function drawGraph() {
   allArtists = graphNodes;
 
   // Scale for colors
-  var colorArray = ['#636363', '#775E5E', '#8C5959', '#A15454', '#B54F4F', '#CA4A4A', '#DF4545', '#F44141'];
+  var colorArray = ["#616468", "#765F62", "#8B5A5C", "#A05557", "#B55051", "#CA4B4C", "#DF4646", "#F44141"];
   var color = d3.scaleQuantize()
     .domain([0, 10000000])
     .range(colorArray);
@@ -963,9 +963,9 @@ function drawGraph() {
     })
     .attr('fill', (d) => {
       if (d.id == source.permalink) {
-        return "#4286f4";
+        return "var(--accent)";
       } else if (d.followerCount < minFollowers || d.followerCount > maxFollowers) {
-        return "#ccc";
+        return "var(--border-gray-dark)";
       } else {
         return color(d.followerCount);
       }
