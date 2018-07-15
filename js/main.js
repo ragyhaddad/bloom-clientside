@@ -159,8 +159,8 @@ function skipTutorial(){
 }
 /* ON PAGE LOAD */
 var randomNum = (Math.floor(Math.random() * recommendedArtists.length));
-// getBloomFavorites();
-getUser(recommendedArtists[randomNum]);
+getBloomFavorites();
+
 
 
 
@@ -170,17 +170,12 @@ getUser(recommendedArtists[randomNum]);
 function getBloomFavorites(username) {
   prevInputs = [];
   var randomNum = (Math.floor(Math.random() * recommendedArtists.length));
-        $.get('https://bloom-api.tk/favorites',function(data,status){
-            if (status == 'success'){
-                getUser(data[0].username);
-            }
-            else{
                 getUser(recommendedArtists[randomNum]);
 
-            }
-
-        })
 }
+
+
+
 
 /*
  *   Generate song urls from network
