@@ -159,8 +159,8 @@ function skipTutorial(){
 }
 /* ON PAGE LOAD */
 var randomNum = (Math.floor(Math.random() * recommendedArtists.length));
-getBloomFavorites();
-
+// getBloomFavorites();
+getUser(recommendedArtists[randomNum]);
 
 
 
