@@ -1,4 +1,4 @@
 # Visualizing SoundCloud social networks with bloommusic.us
-###Developers:
+### Developers:
 Ragy Haddad
 Sebastian Wetzel
